@@ -2,3 +2,12 @@ docker images
 docker ps -a
 
 docker pull 
+
+docker rm /start/stop
+
+docker image rm
+docker logs <contenedor>
+
+// COMPOSE
+docker-compose -f <archivo.yml> pull <-- DEscarga
+docker-compose -f <archivo.yml> up <-- Comienzo
