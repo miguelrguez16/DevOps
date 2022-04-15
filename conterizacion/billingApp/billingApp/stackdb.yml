@@ -7,12 +7,13 @@ services:
     image: postgres
     restart: always
     environment:
-    ports:
-      - 5432:5432
-    environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: qwerty
-      POSTGRES_DB: postgres    
+      POSTGRES_DB: postgres 
+    ports:
+      - 5432:5432
+
+         
 
   adminer:
     container_name: adminer
