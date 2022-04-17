@@ -6,7 +6,6 @@ services:
     container_name: postgres
     image: postgres:latest
     restart: always
-    environment:
     ports:
       - 5432:5432
     volumes:
@@ -45,8 +44,17 @@ services:
   billingapp-front:
     build:
       context: ./angular 
-    container_name: billingApp-front
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: 0.15      #No más del 15% de CPU
+          memory: 250M      #No más del 250MB de CPU
+        reservations:
+          cpus: 0.1        #Recursos reservados 
+          memory: 128M
+    #container_name: billingApp-front
     depends_on:     
       - billingapp-back
     ports:
-      - 80:80 
+      - 80-85:80 

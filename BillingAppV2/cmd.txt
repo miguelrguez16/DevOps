@@ -27,8 +27,11 @@ Detener todos los servicios de la orquestación
 docker-compose -f stack-billing.yml stop
 
 Escalar un servicio al iniciar la orquestación
-
 docker-compose -f stack-billing.yml up --scale  billingapp-front=3 -d --force-recreate
+
+
+docker-compose -f stack-billing.yml up -d --force-recreate
+
 Detener todos los contenedores
 
 docker stop $(docker ps -a -q)
